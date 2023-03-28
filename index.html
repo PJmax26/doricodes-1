@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoriCodes</title>
+    <link rel="stylesheet" href="/Dori Codes/style.css">
+    <link rel="stylesheet" href="/Dori Codes/screens.css">
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --nav_link: #f75e5e;
+    --nav: #f8f6f6;
+    --logo: #ea4040;
+    --button: #f74646;
+}
+
+.navigators{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu{
+    display: none;
+}
+
+nav{
+    width: 100%;
+    padding: 20px;
+    background-color: var(--nav);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+}
+
+.logo{
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--logo);
+    cursor: default;
+}
+
+nav ul li{
+    display: inline;
+    list-style-type: none;
+    margin-right: 25px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--nav_link);
+    font-size: 17px;
+    font-weight: 500;
+}
+
+nav ul li a:hover{
+    color: pink;
+}
+
+.contact_us{
+    font-size: 17px;
+    padding: 10px;
+    color: white;
+    background-color: var(--button);
+    border: 0;
+    outline: 0;
+    width: 150px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.join_us{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.join_us a{
+    margin: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--logo);
+}
+
+.join_us a:hover{
+    text-decoration: underline;
+}
+
+.hero_box{
+    padding: 10% 50px 0 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .hero_box::before{
+    position: absolute;
+    width: 400px;
+    height:400px;
+    content: ' ';
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f75e5e, pink);
+    top: 14%;
+    left: 20%;
+} */
+
+.hero{
+    /* margin-top: 10%; */
+    cursor: default;
+    /* z-index: 5; */
+}
+
+.hero h1{
+    font-size: 60px;
+    font-weight: 100;
+    margin-bottom: 30px;
+}
+.hero h2{
+    font-size: 20px;
+    font-weight: 100;
+    color: var(--logo);
+    margin-bottom: 20px;
+}
+.hero p{
+    font-size: 20px;
+    font-weight: 50;
+    margin-bottom: 20px;
+}
+
+.hero button{
+    font-size: 20px;
+    padding: 10px;
+    color: white;
+    background-color: var(--button);
+    border: 0;
+    outline: 0;
+    width: 200px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.hero button:hover{
+    background-color: var(--nav_link);
+}
+
+span{
+    color: var(--logo);
+}
+
+#hero_img{
+    width: 50em;
+}
+
+.message_us{
+    width: 100%;
+    padding: 50px;
+    background-color: var(--logo);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: default;
+}
+
+.message_us h2{
+    font-weight: 100;
+    color: white;
+}
+
+.box input{
+    width: 400px;
+    height: 40px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    font-weight: 100;
+    font-size: 17px;
+    padding: 10px;
+}
+
+#message_btn{
+    padding: 15px;
+    font-size: 17px;
+    color: white;
+    background-color: var(--nav_link);
+    border: 0;
+    outline: 0;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#message_btn:hover{
+    background-color: red;
+}
+
+.about_us, .expectations{
+    padding: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    cursor: default;
+}
+
+.services{
+    padding: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    cursor: default;
+    margin: 10px;
+}
+
+.expectations{
+    background-color: var(--logo);
+}
+
+.about_text, .expectations_text, .services_text{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.services_text{
+    width: 50%;
+}
+
+.about_text h1, .services_text h1{
+    font-size: 60px;
+    font-weight: 200;
+    margin: 10px;
+    color: var(--logo);
+}
+
+.expectations_text h1{
+    font-size: 50px;
+    font-weight: 200;
+    margin: 7px;
+    color: var(--nav);
+}
+
+.about_text h2, .expectations_text h2, .services_text h2{
+    color: var(--logo);
+    font-size: 20px;
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+
+.about_text p, .expectations_text p, .services_text p{
+    font-size: 20px;
+    word-spacing: 3px;
+    line-height: 1.5em;
+}
+
+.expectations_text p{
+    color: var(--nav);
+}
+
+.about_text a, .expectations_text a, .services_text a{
+    color: var(--logo);
+}
+
+.about_text a:hover, .expectations_text a:hover, .services_text a:hover{
+    color: pink;
+}
+
+.about_text button, .expectations_text button{
+    font-size: 20px;
+    padding: 10px;
+    color: white;
+    background-color: var(--button);
+    border: 0;
+    outline: 0;
+    width: 200px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.expectations_text button {
+    background-color: var(--nav);
+    color: var(--logo);
+}
+
+.expectations_text button:hover{
+    background-color: var(--nav_link);
+    color: white;
+}
+
+.about_text button:hover, .expectations_text button:hover{
+    background-color: var(--nav_link);
+}
+
+.devs_container{
+    max-width: 100%;
+    min-height: 400px;
+    margin-inline: auto;
+    padding: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.profile_card{
+    background-color: var(--logo);
+    margin: 20px;
+    width: 450px;
+    height: 250px;
+    color: var(--nav);
+    cursor: default;
+    border-radius: 3px;
+    transition: transform .4s;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.profile_card h2{
+    margin: 15px;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.profile_card h3{
+    margin: 15px;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.profile_card p{
+    font-weight: 100;
+    margin: 15px;
+}
+
+.profile_card img{
+    width: 100%;
+    height: 100%;
+}
+
+.services_nav{
+    width: 100%;
+    padding: 50px;
+    text-align: center;
+    color: white;
+    background-color: var(--logo);
+}
+
+.services img{
+    width: 300px;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--logo);
+    padding: 10%;
+}
+
+.footer_links{
+    padding: 10px;
+}
+
+footer h3{
+    font-size: 17px;
+    font-weight: 200;
+    color: rgb(9, 150, 197);
+    margin: 10px;
+}
+
+footer ul li{
+    list-style: none;
+    max-width: 5px;
+}
+
+footer ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 100px;
+    line-height: 2em;
+}
+
+footer ul li a:hover{
+    color: pink;
+    transition: .3s ease;
+    padding-left: 20px;
+}
+
+footer input{
+    width: 100%;
+    padding: 20px;
+    border: 0;
+    outline: 0;
+    margin-bottom: 2em;
+    font-size: 20px;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+
+footer textarea{
+    width: 100%;
+    height: 200px;
+    border: 0;
+    outline: 0;
+    border-radius: 3px;
+    padding: 20px;
+    font-size: 17px;
+    border: 1px solid white;
+    margin-bottom: 2em;
+}
+
+footer #submit{
+    background-color: white;
+    color: var(--logo);
+}
+
+footer #submit:hover{
+        background-color: var(--nav_link);
+        color: white;
+}
+
+.main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .form_box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    height: 90%;
+    background-color: var(--nav);
+}
+
+.main .form_box img{
+    width: 50%;
+    height: 100%;
+}
+
+.main form{
+    background-color: var(--nav_link);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    padding: 50px;
+}
+
+.main form h1{
+    font-size: 50px;
+    font-weight: 600;
+    color: var(--nav);
+    text-align: center;
+    margin: 10px;
+}
+
+.main form h1 span a{
+    font-size: 17px;
+    color: white;
+}
+
+.main form h1 span a:hover{
+    text-decoration: none;
+}
+
+.main form input{
+    margin-top: 5px;
+    border: 0;
+    outline: 0;
+    border-radius: 3px;
+    padding: 20px;
+    font-size: 17px;
+}
+
+.main form #signup_btn{
+    background-color: white;
+    color: var(--button);
+}
+
+.main form #signup_btn:hover{
+    background-color: var(--button);
+    color: white;
+}
+
+.main form p{
+    text-align: center;
+}
+
+.main form p a:hover{
+    color: var(--nav);
+}
+
+@media (max-width: 1400px) {
+    #hero_img{
+        width: 40em;
+    }
+
+    .about_us img{
+        width: 40em;
+    }
+
+    .expectations img{
+        width: 40em;
+    }
+
+    .contact_us{
+        font-size: 17px;
+        padding: 7px;
+        width: 130px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .navigators{
+        display: none;
+    }
+
+    .menu{
+        display: block;
+    }
+
+    .contact_us{
+        font-size: 15px;
+        padding: 7px;
+        width: 100px;
+    }
+
+    .hero{
+        width: 80%;
+    }
+
+    #hero_img{
+        width: 30em;
+    }
+
+    .about_us img{
+        width: 30em;
+    }
+
+    .expectations img{
+        width: 30em;
+    }
+
+    .services img{
+        width: 30em;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero_box{
+        padding-top: 20%;
+    }
+
+    .hero h1, .about_text h1, .expectations h1{
+        font-size: 40px;
+
+    }
+    .hero h2, .about_text h2, .expectations h2{
+        font-size: 15px;
+
+    }
+    .hero p, .about_text p, .expectations p{
+        font-size: 15px;
+    }
+    
+    .hero button, .about_text button, .expectations button{
+        font-size: 15px;
+        padding: 5px;
+        width: 150px;
+        height: 45px;
+        margin-bottom: 20px;
+    }
+
+    #hero_img{
+        display: none;
+    }
+
+    .about_us img{
+        display: none;
+    }
+
+    .expectations img{
+        display: none;
+    }
+
+    .hero h1{
+        width: 100%;
+        text-align: center;
+    }
+
+    .message_us{
+        flex-direction: column;
+    }
+
+    .message_us h2{
+        font-size: 17px;
+    }
+
+    .box input{
+        width: 300px;
+        height: 30px;
+        font-size: 16px;
+        padding: 7px;
+    }
+    
+    #message_btn{
+        padding: 7px;
+        font-size: 16px;
+    }
+
+    .services{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .services_text{
+        width: 100%;
+    }
+
+    .services_text h1{
+        font-size: 40px;
+        margin: 5px;
+    }
+
+    .services img{
+        width: 20em;
+    }
+
+    .footer_links{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    footer{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    footer input{
+        width: 100%;
+        padding: 10px;
+        font-size: 17px;
+    }
+    
+    footer textarea{
+        width: 100%;
+        height: 150px;
+        padding: 10px;
+        font-size: 17px;
+    }
+
+    .profile_card{
+        margin: 20px;
+        width: 100%;
+        height: 200px;
+        height: 250px;
+    }
+
+    .profile_card h2{
+        margin: 15px;
+        color: white;
+        font-size: 17px;
+        font-weight: 800;
+    }
+    
+    .profile_card img{
+        width: 55%;
+        height: 100%;
+    }
+}
+</style>
+<body>
+    <nav>
+        <a class="menu" href=""><button>menu</button></a>
+        <div class="logo">
+            <h1>Dori Codes</h1>
+        </div>
+        <div class="navigators">
+            <ul>
+                <li><a href="#home">home</a></li>
+                <li><a href="#about_us">about us</a></li>
+                <li><a href="#expectations">expectations</a></li>
+                <li><a href="#developers">Developers</a></li>
+                <li><a href="#services">our services</a></li>
+            </ul>
+            <a href="#footer"><button class="contact_us">Contact Us</button></a>
+            <div class="join_us">
+                <a href="/Dori Codes/signup.html">sign up</a>
+                <p>or</p>
+                <a href="/Dori Codes/login.html">log in</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero_box" id="home">
+        <div class="hero">
+            <h1>Welcome to the <span>Dori Codes</span> Platform</h1>
+            <h2>Tech and Programming Community</h2>
+            <p>
+                Book our skilled and professionals developers to help you build that project you have in mind
+            </p>
+            <a href="#developers" id="our_devs"><button>See Our Devs</button></a>
+        </div>
+
+        <div class="image">
+            <img id="hero_img" src="/asserts/coder.svg" alt="">
+        </div>
+    </section>
+
+    <section class="message_us" id="message_us">
+        <h2>SignUp to our News Letter</h2>
+
+        <form class="box">
+            <input id="email" type="email" placeholder="Enter Email" required>
+            <button id="message_btn">SignUp</button>
+        </form>
+    </section>
+
+    <section class="about_us" id="about_us">
+        <div class="image">
+            <img src="/asserts/about_us.svg">
+        </div>
+
+        <div class="about_text">
+            <h1>Who We Are</h1>
+            <h2>Your Online Tech Support and Programmer</h2>
+            <p>
+                Dori Codes is a community of Web developers and 
+                software engineers. We have a common goal to help 
+                starting individuals in tech to reach a higher stands 
+                as developers too and also help business persons with 
+                thier online businesses.
+                <br><br>
+                On this platform, we connect with business owners and help them 
+                put thier businesses online.
+                We also give help to individuals hoping to start a career in web developmet.
+                <br><br>
+                With our skills in various technology aspects, we also provide
+                other services including helping individuals start 
+                thier online business, consultasion and career path guidance in tech.
+                <br><br>
+                click here to see <a href="#services">our services</a>
+            </p>
+            <a href="#footer"><button>Talk to Us</button></a>
+        </div>
+    </section>
+
+    <section class="expectations" id="expectations">
+        <div class="expectations_text">
+            <h1>What to Expect from Us</h1>
+            <h2>We strive to meet all your requirements</h2>
+            <p>
+                At Dori Codes, we do our best to provide for our 
+                clients thier needs as explained to us.
+                <br><br>
+                We work hand-in-hand and communicate with our clients 
+                as needed in other to get all necessary information 
+                about their businesses and build a perfect site for it.
+            </p>
+            <a href="#our_devs"><button>SignUp</button></a>
+        </div>
+
+        <div class="image">
+            <img src="/asserts/working.svg" alt="">
+        </div>
+    </section>
+
+    <section class="devs" id="developers">
+        <div class="devs_container">
+            <div class="profile_card">
+                <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="">
+                <div class="profilr_info">
+                    <h2>John Doe</h2>
+                    <h3>Frontend developer</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    </p>
+                    <div class="links">
+                        <a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile_card">
+                <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="">
+                <div class="profilr_info">
+                    <h2>Mark Smith</h2>
+                    <h3>Frontend developer</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+            </div>
+
+            <div class="profile_card">
+                <img src="https://randomuser.me/api/portraits/women/10.jpg" alt="">
+                <div class="profilr_info">
+                    <h2>Jane Doe</h2>
+                    <h3>Frontend developer</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+            </div>
+
+            <div class="profile_card">
+                <img src="/asserts/jawad.jpg" alt="">
+                <div class="profilr_info">
+                    <h2>Nassam Jawad</h2>
+                    <h3>Frontend developer</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+            </div>
+
+            <div class="profile_card">
+                <img src="https://randomuser.me/api/portraits/women/13.jpg" alt="">
+                <div class="profilr_info">
+                    <h2>Sara Smith</h2>
+                    <h3>Frontend developer</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+            </div>
+
+            <div class="profile_card">
+                <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="">
+                <div class="profilr_info">
+                    <h2>James McCoy</h2>
+                    <h3>Frontend developer</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="services_nav" id="services">
+        <h1>Our Services</h1>
+    </div>
+
+    <!-- services section -->
+    <section>
+        <div class="services">
+            <div class="image">
+                <img src="/asserts/building_websites.svg" alt="">
+            </div>
+    
+            <div class="services_text">
+                <h1>Online Business Development</h1>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio soluta iusto iure dolore. Ullam magnam dolore, eveniet beatae, labore tempore ea eligendi quos sapiente temporibus accusantium ipsa, ad itaque dignissimos.
+                </p>
+            </div>
+        </div>
+
+        <div class="services">
+            <div class="image">
+                <img src="/asserts/coding.svg" alt="">
+            </div>
+
+            <div class="services_text">
+                <h1>Computing Services</h1>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio soluta iusto iure dolore. Ullam magnam dolore, eveniet beatae, labore tempore ea eligendi quos sapiente temporibus accusantium ipsa, ad itaque dignissimos.
+                </p>
+            </div>
+        </div>
+
+        <div class="services">
+            <div class="image">
+                <img src="/asserts/career_progress.svg" alt="">
+            </div>
+    
+            <div class="services_text">
+                <h1>Tech Career Path Guidance</h1>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio soluta iusto iure dolore. Ullam magnam dolore, eveniet beatae, labore tempore ea eligendi quos sapiente temporibus accusantium ipsa, ad itaque dignissimos.
+                </p>
+            </div>
+        </div>
+
+        <div class="services">
+            <div class="image">
+                <img src="/asserts/building_websites.svg" alt="">
+            </div>
+
+            <div class="services_text">
+                <h1>Web Development Training</h1>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio soluta iusto iure dolore. Ullam magnam dolore, eveniet beatae, labore tempore ea eligendi quos sapiente temporibus accusantium ipsa, ad itaque dignissimos.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="clients"></section>
+
+    <footer class="footer" id="footer">
+        <div class="footer_links">
+            <div class="sponsors">
+                <h3>Our Sponsors</h3>
+                <ul>
+                    <li><a href="https://www.opayweb.com/" target="_blank">Opay</a></li>
+                    <li><a href="https://zed-pay.com/" target="_blank">ZedPay</a></li>
+                    <li><a href="https://farmerline.co/#intro" target="_blank">FarmerLine</a></li>
+                    <li><a href="" target="_blank">3Farmate</a></li>
+                    <li><a href="" target="_blank">VirtCash</a></li>
+                </ul>
+            </div>
+            
+            <div class="socials">
+                <h3>Social links</h3>
+                <ul>
+                    <li><a href="" target="_blank">Facebook</a></li>
+                    <li><a href="" target="_blank">LinkedIn</a></li>
+                    <li><a href="" target="_blank">Twitter</a></li>
+                    <li><a href="" target="_blank">Instagram</a></li>
+                    <li><a href="" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <form action="">
+                <input type="text" placeholder="Enter your Name" required>
+                <br>
+                <input type="email" placeholder="Enter your Email" required>
+                <br>
+                <textarea id="msg_box" required></textarea>
+                <input type="submit" id="submit">
+            </form>
+        </div>
+    </footer>
+    
+
+    <script>
+        document.getElementById('message_btn').onclick = function() {
+            if(document.getElementById('email').value != ''){
+                alert('SignUp Succesful. Thanks for Connecting with us :)')
+            }
+        };
+
+        document.getElementById('menu').onclick = function(){
+            alert('navbar activated')
+        }
+    </script>
+</body>
+</html>
